@@ -1,0 +1,50 @@
+
+importFrom(Biobase, rowMedians)
+importFrom(mygene, getGenes)
+import(clusterProfiler)
+
+importFrom(DOSE, enrichDO)
+importFrom(clusterProfiler, groupGO)
+importFrom(clusterProfiler, enrichKEGG)
+importFrom(clusterProfiler, plot)
+importFrom(reshape, melt)
+importFrom(gridExtra, grid.arrange)
+importFrom(grid, rasterGrob)
+importFrom(grid, textGrob)
+importFrom(grid, gpar)
+importFrom(gridExtra, arrangeGrob)
+importFrom(ape, as.phylo)
+importFrom(ggtree, ggtree)
+importFrom(ggtree, plot)
+importFrom(ggtree, gheatmap)
+importFrom(ggtree, geom_tiplab)
+importFrom(png, readPNG)
+importFrom(sva, svaseq)
+
+import(ggplot2)
+import(ReactomePA)
+export(linc)
+export(justlinc)
+export(clusterlinc)
+export(singlelinc)
+export(getbio)
+export(getlinc)
+export(plotlinc)
+export(querycluster)
+export(feature)
+export(linctable)
+export(overlaylinc)
+exportClass("LINCmatrix")
+exportClass("LINCcluster")
+exportClass("LINCbio")
+exportClass("LINCsingle")
+exportClass("LINCfeature")
+importFrom(Rcpp, sourceCpp)
+
+
+useDynLib(LINC)
+
+
+
+
+
