@@ -1,14 +1,15 @@
 
 importFrom(Biobase, rowMedians)
 importFrom(mygene, getGenes)
-import(clusterProfiler)
-importFrom(ReactomePA, enrichPathway)
-importFrom(GOSemSim, getDb)
 
-importFrom(DOSE, enrichDO)
+importFrom(clusterProfiler, enrichGO)
+importFrom(clusterProfiler, compareCluster)
 importFrom(clusterProfiler, groupGO)
 importFrom(clusterProfiler, enrichKEGG)
 importFrom(clusterProfiler, plot)
+importFrom(ReactomePA, enrichPathway)
+importFrom(DOSE, enrichDO)
+
 importFrom(reshape, melt)
 importFrom(gridExtra, grid.arrange)
 importFrom(grid, rasterGrob)
@@ -25,7 +26,7 @@ importFrom(sva, svaseq)
 
 import(org.Hs.eg.db)
 import(ggplot2)
-import(ReactomePA)
+
 export(linc)
 export(justlinc)
 export(clusterlinc)
