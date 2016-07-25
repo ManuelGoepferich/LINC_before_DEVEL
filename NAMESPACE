@@ -2,7 +2,7 @@
 importFrom(Biobase, rowMedians)
 importFrom(mygene, getGenes)
 
-imortFrom(GOSemSim, getDb)
+importFrom(GOSemSim, getDb)
 
 importFrom(clusterProfiler, enrichGO)
 importFrom(clusterProfiler, compareCluster)
