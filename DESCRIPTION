@@ -9,6 +9,6 @@ Depends: R (>= 3.1.2), ggplot2,   methods, stats, reshape2, reshape, org.Hs.eg.d
 Description: This package enables the annotation of ncRNAs based on expression datasets. The underlying principle is called 'guilty by association' meaning a non-coding RNA is assumed to the have the a similar biological function as the group of its associated (co-expressed) protein-coding genes. In the first step a correlation matrix is computed storing the correlation of coding and non-coding genes. Secondly, query genes and their associated genes with high correlations can be extracted. The third step calls a gene ontology to retrieve the biological function of associated genes.  
 License: Artistic-2.0
 LinkingTo: Rcpp
-Imports: Rcpp  (>= 0.11.0), clusterProfiler, ReactomePA, DOSE, ggtree, gridExtra, ape, grid, png,  mygene, Biobase, sva
+Imports: Rcpp  (>= 0.11.0), GOSemSim, clusterProfiler, ReactomePA, DOSE, ggtree, gridExtra, ape, grid, png,  mygene, Biobase, sva
 VignetteBuilder: knitr
 Suggests: RUnit, BiocGenerics,  knitr, biomaRt
