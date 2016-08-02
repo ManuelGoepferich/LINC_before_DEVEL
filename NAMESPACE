@@ -2,8 +2,6 @@
 importFrom(Biobase, rowMedians)
 importFrom(mygene, getGenes)
 
-importFrom(GOSemSim, getDb)
-
 importFrom(clusterProfiler, enrichGO)
 importFrom(clusterProfiler, compareCluster)
 importFrom(clusterProfiler, groupGO)
