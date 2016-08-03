@@ -36,7 +36,7 @@ The basic section will introduce the function *justlinc()* which will immediatel
 
 The function *justlinc* is a wrapper. It requires a gene expression matrix with columns corresponding to samples and rows to genes. A preprocessing of the matrix is not mandatory. Gene ids need to be given preferably as Ensembl gene ids. **Importanly, this function uses predefined thresholds, so it will not give a result in every case! On the other hand it does not need additional information.**   
 
-```{r fig.width = 14, fig.height = 12, warning = F, message = F}
+```{r fig.width = 14, fig.height = 12, warning = F, message = F, eval =F}
 suppressWarnings(suppressMessages(require(LINC)))
 data(LIVER_EXPR)
 
@@ -51,7 +51,7 @@ The first plot shows 10 lincRNAs selected according to their median expression, 
 
 The optional argument *targetGenes* can be either a gene *'biotype'* (the default value is *'lincRNA'*), a single candidate gene or a vector of genes.
 
-```{r fig.width = 9.5, fig.height = 11.5, fig.keep='first', warning = F}
+```{r fig.width = 9.5, fig.height = 11.5, fig.keep='first', warning = F, eval =F}
 # 'justlinc' called with queries
 my_lincRNAs <- c("ENSG00000224153", "ENSG00000197813",
                  "ENSG00000179136", "ENSG00000259439",
@@ -123,7 +123,7 @@ querycluster('647979', queryTitle = 'NORAD',
 
 The enriched biological terms from gene annotation resources like *Reactome PA* and *Gene Ontology (GO)* for the cluster (multiple candidate lincRNA genes) can be identified applying *getbio()* which will call supported functions from the *clusterProfiler* package. [7 - 9] This analysis will reveal which functions, pathways or compartments are associated with the lincRNA-co-expressed genes.  
 
-```{r, eval = F}
+```{r, eval = F, eval =F}
 # Function call for 'getbio()' and plotting:
 crbl_cc <- getbio(crbl_cluster, translate = 'none', ont = "CC")
 plotlinc(crbl_cc)
@@ -143,7 +143,7 @@ plotlinc(brain_cc)
 
 For a single query gene they function *singlelinc()* comes with many options in terms of co-expression selection. One can select for absolute values, negative correlations and a maximum for co-expressed genes. Here, the query is 'MEG3 - maternally expressed 3' (its Entrez gene id is '55384'). In contrast to *clusterlinc()*, *singlelinc()* will directly call a gene annotation resource for the co-expressed genes.
 
-```{r fig.width = 21, fig.height = 10, warning = F}
+```{r fig.width = 21, fig.height = 10, warning = F, eval =F}
 meg3 <- singlelinc(crbl_matrix, query = "55384", threshold = 0.00005, ont = 'BP', verbose = F)
 plotlinc(meg3)
 ```
