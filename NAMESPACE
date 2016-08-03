@@ -1,13 +1,10 @@
 
 importFrom(Biobase, rowMedians)
 importFrom(mygene, getGenes)
+import(clusterProfiler)
+import(ReactomePA)
 
-importFrom(clusterProfiler, enrichGO)
-importFrom(clusterProfiler, compareCluster)
-importFrom(clusterProfiler, groupGO)
-importFrom(clusterProfiler, enrichKEGG)
-importFrom(clusterProfiler, plot)
-importFrom(ReactomePA, enrichPathway)
+
 importFrom(DOSE, enrichDO)
 
 importFrom(reshape, melt)
@@ -26,7 +23,7 @@ importFrom(sva, svaseq)
 
 import(org.Hs.eg.db)
 import(ggplot2)
-
+import(ReactomePA)
 export(linc)
 export(justlinc)
 export(clusterlinc)
@@ -37,6 +34,7 @@ export(plotlinc)
 export(querycluster)
 export(feature)
 export(linctable)
+export(getcoexpr)
 export(overlaylinc)
 exportClass("LINCmatrix")
 exportClass("LINCcluster")
@@ -47,6 +45,7 @@ importFrom(Rcpp, sourceCpp)
 
 
 useDynLib(LINC)
+
 
 
 
