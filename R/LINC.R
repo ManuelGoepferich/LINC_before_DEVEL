@@ -35,10 +35,30 @@
   
   
   packageStartupMessage(paste("This is LINC\nVersion:",
-                              "0.99.0 (Co-Expression Analysis of lincRNAs)"))
+                              "0.99.1 (Co-Expression Analysis of lincRNAs)"))
   
 }
 
+
+
+#getDb
+#function (organism) 
+#{
+#  if (organism == "worm") {
+#    organism = "celegans"
+#    warning("'worm' is deprecated, please use 'celegans' instead...")
+#  }
+#  annoDb <- switch(organism, anopheles = "org.Ag.eg.db", arabidopsis = "org.At.tair.db", 
+ #                  bovine = "org.Bt.eg.db", canine = "org.Cf.eg.db", celegans = "org.Ce.eg.db", 
+ #                  chicken = "org.Gg.eg.db", chimp = "org.Pt.eg.db", coelicolor = "org.Sco.eg.db", 
+  ##                 ecolik12 = "org.EcK12.eg.db", ecsakai = "org.EcSakai.eg.db", 
+    #               fly = "org.Dm.eg.db", gondii = "org.Tgondii.eg.db", human = "org.Hs.eg.db", 
+   #                malaria = "org.Pf.plasmo.db", mouse = "org.Mm.eg.db", 
+     #              pig = "org.Ss.eg.db", rat = "org.Rn.eg.db", rhesus = "org.Mmu.eg.db", 
+      #             xenopus = "org.Xl.eg.db", yeast = "org.Sc.sgd.db", zebrafish = "org.Dr.eg.db", 
+  #)
+  #return(annoDb)
+#}
 
 
 #ENSG_BIO_DIR <- system.file("extdata", "ENSG_BIO.RData", package = "LINC")
@@ -580,8 +600,6 @@ setMethod(f = "linc",
   if(is.null(codingGenes)) stop(errorm00)
   if(length(codingGenes) != nrow(object)) stop(errorm01)
   pc_promise <- codingGenes
-  
-
   
   # interpretation of'verbose'
   if(class(verbose) != "logical" ){
@@ -1396,8 +1414,8 @@ setGeneric(name = "plotlinc",
           input,
   showCor,
       returnDat = FALSE){
-      standardGeneric("plotlinc") # do it from environment
-           })
+      standardGeneric("plotlinc") 
+})
 setMethod(f   = "plotlinc",
           signature = c("LINCmatrix",
                         "missing"),  
@@ -2399,7 +2417,6 @@ LINCfeature <- setClass("LINCfeature",
 feature <- function(setLevel   = NULL,
                     customID   = NULL,
                     customCol  = "black",
-                    #geneSystem = FALSE,
                     showLevels = FALSE){
   out_feature  <- new("LINCfeature")
   linc_classes <- c("LINCmatrix", "LINCcluster",
@@ -3026,6 +3043,36 @@ setMethod(f   = "getlinc",
       return(invisible(input@results))
     }
 })
+
+# function getcoexpr
+getcoexpr<- function(input, query = NULL){
+  
+  # check the class          
+  if(!any(is.element(class(input), 
+                     c("LINCmatrix", "LINCcluster",
+                       "LINCsingle", "LINCbio")))){
+    stop("input is not of a supported 'LINC' class")
+  } 
+  
+  if(class(input) == "LINCcluster"){
+   ip_promise  <- try(input@results$cluster$neighbours[
+  names(input@results$cluster$neighbours) == query],
+  silent = TRUE)
+   if(class(ip_promise) != "try-error"){
+     ip_promise <- unlist(ip_promise)
+     names(ip_promise) <- NULL
+     return(ip_promise)
+   }
+  }
+  
+  if(class(input) == "LINCsingle"){
+    ip_promise  <- try(names(input@results$cor),
+                       silent = TRUE)
+    if(class(ip_promise) != "try-error"){
+      return(ip_promise)
+    }
+  }
+}
 
 # function linctable
 setGeneric(name = "linctable",
