@@ -229,6 +229,4 @@ biological themes among gene clusters. OMICS: A Journal of Integrative Biology 1
 
 [8] Yu G, Wang L, Yan G and He Q (2015). DOSE: an R/Bioconductor package for Disease Ontology Semantic and Enrichment analysis. Bioinformatics 31: 608 - 609.
 
-[9] Yu G. ReactomePA: Reactome Pathway Analysis. R package version 1.12.1.
-
-
+[9] Yu G and He QY (2016). ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization. Molecular BioSystems 12: 477 - 479. 
