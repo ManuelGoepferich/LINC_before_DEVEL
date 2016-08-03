@@ -36,7 +36,7 @@ The basic section will introduce the function *justlinc()* which will immediatel
 
 The function *justlinc* is a wrapper. It requires a gene expression matrix with columns corresponding to samples and rows to genes. A preprocessing of the matrix is not mandatory. Gene ids need to be given preferably as Ensembl gene ids. **Importanly, this function uses predefined thresholds, so it will not give a result in every case! On the other hand it does not need additional information.**   
 
-```{r fig.width = 14, fig.height = 12, warning = F, message = F, eval =T}
+```{r fig.width = 14, fig.height = 12, warning = F, message = F, eval =F}
 suppressWarnings(suppressMessages(require(LINC)))
 data(LIVER_EXPR)
 
@@ -51,7 +51,7 @@ The first plot shows 10 lincRNAs selected according to their median expression, 
 
 The optional argument *targetGenes* can be either a gene *'biotype'* (the default value is *'lincRNA'*), a single candidate gene or a vector of genes.
 
-```{r fig.width = 9.5, fig.height = 11.5, fig.keep='first', warning = F, eval =T}
+```{r fig.width = 9.5, fig.height = 11.5, fig.keep='first', warning = F, eval =F}
 # 'justlinc' called with queries
 my_lincRNAs <- c("ENSG00000224153", "ENSG00000197813",
                  "ENSG00000179136", "ENSG00000259439",
@@ -67,7 +67,7 @@ For multiple candidate genes it is assumed that they have a connection, for inst
 The main function of this package termed *linc()* computes a correlation matrix and perfoms statistical correction. Spearman's rank correlations is the default method. It provides options for the removal of principle components and gene outliers. These methods can indicate whether correlation values are influenced by confounding factors. Negative correlation can be computed by providing a user-defined correlation function (example C). Protein-coding genes and queries (lincRNAs and other ncRNAs) are separated by the argument *codingGenes*, an assignment of protein-coding genes given as a *logical* vector or a vector of gene names. The output of this function is a *LINCmatrix* instance. These objects can be plotted applying the *plotlinc()* function. The resulting plot illustrates the statistics of the input matrix.
 **It is useful to subset the input expression matrix such that only lincRNAs of interest as well as variance- and/or expression-selected protein-coding genes are considered!**
 
-```{r fig.width = 17, fig.height = 10, warning = F, eval =T}
+```{r fig.width = 17, fig.height = 10, warning = F, eval =F}
 data(BRAIN_EXPR)
 
 # (A) call 'linc' with no further arguments
@@ -94,7 +94,7 @@ plotlinc(crbl_matrix_esd)
 Starting from the correlation matrix, the *LINCmatrix* object, there are two functions to compute either (I) a cluster with *clusterlinc()* or (II) an analysis for a single query with *singlelinc()*.
 The *clusterlinc()* functions perfroms a correlation test (Spearman's rho by default) and clusters the candidate lincRNAs based on their interaction partners or their correlations.
 
-```{r fig.width = 11.5, fig.height = 5, warning = F, fig.keep='none', eval =T}
+```{r fig.width = 11.5, fig.height = 5, warning = F, fig.keep='none', eval =F}
 # call 'clusterlinc' with no further arguments
 crbl_cluster <- clusterlinc(crbl_matrix, verbose = F)
 # apply the distance method "correlation instead of "dicedist"
@@ -106,7 +106,7 @@ plotlinc(crbl_cluster_cor)
 
 Another function *querycluster()* enables clustering not only across different lincRNAs in one data set, but also clustering of one lincRNA in multiple data sets. In order to distinguish between different expression matrices the function *feature* can be applied in order to add user-defined names (*customID*) and colors (*customCol*).
 
-```{r fig.width = 10, fig.height = 5.5, warning = F, eval =T}
+```{r fig.width = 10, fig.height = 5.5, warning = F, eval =F}
 # add custom names and colors
 gbm_cluster <- gbm_cluster + feature(customID = "CANCER_GBM", customCol = "red")
 ctx_cluster <- ctx_cluster + feature(customID = "HEALTHY_CTX", customCol = "blue")
@@ -131,7 +131,7 @@ plotlinc(crbl_cc)
 
 It can be interesting to compare two objects in terms of intersecting biological terms for shared queries. In the following example the terms for "cellular compartment" from *GO* are compared between two data sets, one representing the tissue Cortex and the other Cerebellum.
 
-```{r fig.width = 9, fig.height = 7.5, fig.keep='first', warning = F, message = F, eval =T}
+```{r fig.width = 9, fig.height = 7.5, fig.keep='first', warning = F, message = F, eval =F}
 # compare two brain tissues using 'overlaylinc'
 ctx_cc <- ctx_cc + feature(customID = "Cortex vs. Cerebellum")
 overlaylinc(ctx_cc, crbl_cc)
@@ -161,7 +161,7 @@ The figure below depicts the workflow for the adavanced mehods in the *LINC* pac
 
 As seen in the previous sections the function *linc()* produces a *LINCmatrix* instance, the function *clusterlinc()* a *LINCcluster* instance and so on. Two functions, termed *feature()* and *getlinc()*, provide quick access to the important data structures stored in these objects. Converting a *LINCcluster* into a *LINCmatrix* for instance could be useful in case one wants to plot the distribution of correlation values instead of the cluster applying *plotlinc()*. The function call *getlinc(..., subject = "queries")* will return the possible queries in the object. Calling *plotlinc(..., showCor =)* will output scatterplots of correlations between a query and up to five subjects. 
 
-```{r fig.width = 11, fig.height = 7, warning = F, eval =T}
+```{r fig.width = 11, fig.height = 7, warning = F, eval =F}
 data(BRAIN_EXPR)
 class(crbl_matrix)
 
