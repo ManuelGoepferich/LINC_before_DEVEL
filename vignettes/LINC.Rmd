@@ -184,7 +184,7 @@ linctable(file_name = "crbl_co_expr", input = crbl_cluster)
 ```
 
 ## 3.0 List of Functions
-```{r eval = T}
+```{r eval = F}
 # WRAPPER
 justlinc()         # gene selection, co-expression
 
