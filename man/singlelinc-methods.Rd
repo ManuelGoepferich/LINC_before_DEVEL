@@ -103,21 +103,21 @@ Manuel Goepferich
 data(BRAIN_EXPR)
 
 # do the correlation test
-xist <- singlelinc(crbl_matrix, query = "7503", threshold = 0.00005)
-plotlinc(xist)
+#xist <- singlelinc(crbl_matrix, query = "7503", threshold = 0.00005)
+#plotlinc(xist)
 
 # selection based on absolute correlation
-meg3 <- singlelinc(crbl_matrix, query = "55384", onlycor = TRUE, underth = FALSE, threshold = 0.5)
-plotlinc(meg3)
+#meg3 <- singlelinc(crbl_matrix, query = "55384", onlycor = TRUE, underth = FALSE, threshold = 0.5)
+#plotlinc(meg3)
 
 # get biological processes from 'Gene Ontology'
-meg3 <- singlelinc(crbl_matrix, query = "55384", threshold = 0.00005, ont = 'BP')
-plotlinc(meg3)
+#meg3 <- singlelinc(crbl_matrix, query = "55384", threshold = 0.00005, ont = 'BP')
+#plotlinc(meg3)
 
 # get enriched pathways from 'ReatomePA'
-meg3 <- singlelinc(crbl_matrix, query = "55384", onlycor = TRUE, underth = FALSE, threshold = 0.5,
-                   annotateFrom = 'enrichPathway')
-plotlinc(meg3)
+#meg3 <- singlelinc(crbl_matrix, query = "55384", onlycor = TRUE, underth = FALSE, threshold = 0.5,
+#                   annotateFrom = 'enrichPathway')
+#plotlinc(meg3)
 }  
 \keyword{ ~singlelinc }
 \keyword{methods}
