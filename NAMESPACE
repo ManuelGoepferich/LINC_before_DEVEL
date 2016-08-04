@@ -3,7 +3,7 @@ importFrom(Biobase, rowMedians)
 importFrom(mygene, getGenes)
 import(clusterProfiler)
 import(ReactomePA)
-
+import(stats)
 
 importFrom(DOSE, enrichDO)
 
