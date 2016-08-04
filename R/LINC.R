@@ -3090,7 +3090,7 @@ setMethod(f   = "linctable",
             tab <- lapply(pre[[1]], function(y){y[[2]][1:500] })
             m_tab <- matrix(unlist(tab), ncol = 500, nrow = length(tab), byrow = TRUE )
             rownames(m_tab) <- names(tab)
-            write.table(m_tab, file = file_name, col.names = F, sep = "\t"  )
+            write.table(m_tab, file = file_name, col.names = FALSE, sep = "\t"  )
             message("table of enriched terms written")
           })
 setMethod(f   = "linctable",
@@ -3102,7 +3102,7 @@ setMethod(f   = "linctable",
             tab <- lapply(pre, function(y){y[1:500] })
             m_tab <- matrix(unlist(tab), ncol = 500, nrow = length(tab), byrow = TRUE )
             rownames(m_tab) <- names(tab)
-            write.table(m_tab, file = file_name, col.names = F, sep = "\t"  )
+            write.table(m_tab, file = file_name, col.names = FALSE, sep = "\t"  )
             message("table of co-expressed genes written")
           })
 
