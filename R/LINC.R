@@ -1377,9 +1377,12 @@ signature       = c("LINCcluster"),
   if(exists("cP_promise", store)){
   annotateFun <- match.fun(cP_promise)
   
+    OrgDb <- 'org.Hs.eg.db'
+  if(cP_promise == "enrichPathway"){ OrgDb <- "human"}
+  
   out_bio_terms <- lapply(qy_promise,
     function(x){ entrez_query <- trans_this(x)
-    cP_result   <- annotateFun(gene = entrez_query, ...)
+    cP_result   <- annotateFun(gene = entrez_query, OrgDb, ...)
      if(class(cP_result) == "enrichResult"){
      qvalues     <- cP_result@result$qvalue 
      bio_terms   <- cP_result@result$Description
@@ -2368,9 +2371,11 @@ setMethod(f = "singlelinc",
     trans_this <- function(x) x
   }
   
+    OrgDb <- 'org.Hs.eg.db'
+  if(cP_promise == "enrichPathway"){ OrgDb <- "human"}
   ## SECTION3: CALL TO GENE ANNOTATION
   entrez_query <- trans_this(qg_promise)  
-  cP_result    <- annotateFun(gene = entrez_query, ...)
+  cP_result    <- annotateFun(gene = entrez_query, OrgDb, ...)
    if(class(cP_result) == "enrichResult"){
     qvalues     <- cP_result@result$qvalue      #### check this
     bio_terms   <- cP_result@result$Description
