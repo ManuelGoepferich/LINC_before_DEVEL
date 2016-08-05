@@ -79,8 +79,8 @@ Manuel Goepferich
 data(BRAIN_EXPR)
 
 ## Find the enriched cellular components for each query in the cluster 
-#crbl_cc <- getbio(crbl_cluster, translate = 'none', ont = "CC")
-#plotlinc(crbl_cc)
+crbl_cc <- getbio(crbl_cluster, translate = 'none', ont = "CC")
+plotlinc(crbl_cc)
 }  
 \keyword{ ~getbio }
 \keyword{methods}
