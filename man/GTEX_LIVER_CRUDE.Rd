@@ -13,6 +13,10 @@ mRNA expression in LIVER
   A matrix
 }
 
+\value{
+gene expression matrix
+}
+
 \source{
 http://www.gtexportal.org
 Genotype-Tissue Expression (GTEx)
