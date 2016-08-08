@@ -28,6 +28,10 @@ mRNA expression in LIVER
   gene expression matrix, or objects from \code{LINC}
 }
 
+\value{
+gene expression matrix
+}
+
 \source{
 http://www.gtexportal.org
 Genotype-Tissue Expression (GTEx)
