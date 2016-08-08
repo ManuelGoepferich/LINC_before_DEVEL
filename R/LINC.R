@@ -2417,7 +2417,7 @@ LINCfeature <- setClass("LINCfeature",
  # geneSystem   = "logical",
   setLevel     = "character",
   showLevels   = "logical"),
-  sealed       = F)
+  sealed       = FALSE)
 
 feature <- function(setLevel   = NULL,
                     customID   = NULL,
