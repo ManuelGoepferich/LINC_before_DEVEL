@@ -40,7 +40,7 @@ exportClass("LINCbio")
 exportClass("LINCsingle")
 exportClass("LINCfeature")
 importFrom(Rcpp, sourceCpp)
-useDynLib(LINC, .registration = TRUE, .fixed = 'C_')
+useDynLib(LINC, .registration = TRUE)
 
 
 
