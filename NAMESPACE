@@ -4,6 +4,7 @@ importFrom(mygene, getGenes)
 import(clusterProfiler)
 import(ReactomePA)
 import(stats)
+import(GOSemSim)
 
 importFrom(DOSE, enrichDO)
 
