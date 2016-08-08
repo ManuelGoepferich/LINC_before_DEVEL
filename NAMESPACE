@@ -5,9 +5,7 @@ import(clusterProfiler)
 import(ReactomePA)
 import(stats)
 import(GOSemSim)
-
 importFrom(DOSE, enrichDO)
-
 importFrom(reshape, melt)
 importFrom(gridExtra, grid.arrange)
 importFrom(grid, rasterGrob)
@@ -21,7 +19,6 @@ importFrom(ggtree, gheatmap)
 importFrom(ggtree, geom_tiplab)
 importFrom(png, readPNG)
 importFrom(sva, svaseq)
-
 import(org.Hs.eg.db)
 import(ggplot2)
 import(ReactomePA)
@@ -43,9 +40,7 @@ exportClass("LINCbio")
 exportClass("LINCsingle")
 exportClass("LINCfeature")
 importFrom(Rcpp, sourceCpp)
-
-
-useDynLib(LINC)
+useDynLib(LINC, .registration = TRUE, .fixes = "")
 
 
 
