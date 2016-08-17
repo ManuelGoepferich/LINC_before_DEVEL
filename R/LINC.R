@@ -1,82 +1,16 @@
 ## LINC_PACKAGE
-## 29 03 2016
+## 17 08 2016
 ############################################################
 ## ISSUES:
-
-#require(methods)
-#require(Rcpp)
-#require(ggplot2)
-#.onLoad <- function(...) {
-  
-  
-#  packageStartupMessage(paste("This is LINC\nVersion:",
-#  "DEVL-0.00.01 (not all features are available yet)"))
-#  packageStartupMessage("Functions: linc(), clusterlinc(),",
- # " singlelinc(), plotlinc(), querycluster(), overlaylinc(),",
- # " getbio()")
- # suppressPackageStartupMessages(require(org.Hs.eg.db))
-#  suppressPackageStartupMessages(require(clusterProfiler))
-#  suppressPackageStartupMessages(require(DOSE))
-#  suppressPackageStartupMessages(require(ReactomePA))
-#  suppressPackageStartupMessages(require(ggtree))
-#  suppressPackageStartupMessages(require(ggplot2))
-#  suppressPackageStartupMessages(require(gridExtra))
-#  suppressPackageStartupMessages(require(ape))
-#  suppressPackageStartupMessages(require(png))
-#  suppressPackageStartupMessages(require(grid))
-  
-  
-
-  
-#}
+## native routines
 
 
 .onAttach <- function(...) {
   
-  
   packageStartupMessage(paste("This is LINC\nVersion:",
-                              "0.99.1 (Co-Expression Analysis of lincRNAs)"))
+                              "0.99.7 (Co-Expression Analysis of lincRNAs)"))
   
 }
-
-
-
-#getDb
-#function (organism) 
-#{
-#  if (organism == "worm") {
-#    organism = "celegans"
-#    warning("'worm' is deprecated, please use 'celegans' instead...")
-#  }
-#  annoDb <- switch(organism, anopheles = "org.Ag.eg.db", arabidopsis = "org.At.tair.db", 
- #                  bovine = "org.Bt.eg.db", canine = "org.Cf.eg.db", celegans = "org.Ce.eg.db", 
- #                  chicken = "org.Gg.eg.db", chimp = "org.Pt.eg.db", coelicolor = "org.Sco.eg.db", 
-  ##                 ecolik12 = "org.EcK12.eg.db", ecsakai = "org.EcSakai.eg.db", 
-    #               fly = "org.Dm.eg.db", gondii = "org.Tgondii.eg.db", human = "org.Hs.eg.db", 
-   #                malaria = "org.Pf.plasmo.db", mouse = "org.Mm.eg.db", 
-     #              pig = "org.Ss.eg.db", rat = "org.Rn.eg.db", rhesus = "org.Mmu.eg.db", 
-      #             xenopus = "org.Xl.eg.db", yeast = "org.Sc.sgd.db", zebrafish = "org.Dr.eg.db", 
-  #)
-  #return(annoDb)
-#}
-
-
-#ENSG_BIO_DIR <- system.file("extdata", "ENSG_BIO.RData", package = "LINC")
-#load(ENSG_BIO_DIR)
-#ENTREZ_BIO_DIR <- system.file("extdata", "ENTREZ_BIO.RData", package = "LINC")
-#load(ENTREZ_BIO_DIR)
-#ENSG_PC_DIR <- system.file("extdata", "ENSG_PC.RData", package = "LINC") 
-#load(ENSG_PC_DIR)
-
-
-
-#
-
-# Load plotting images
-
-
- # suppressPackageStartupMessages(require(org.Hs.eg.db))
-
 
 ## CLASS DEFINITION
 LINCmatrix <- setClass("LINCmatrix",
