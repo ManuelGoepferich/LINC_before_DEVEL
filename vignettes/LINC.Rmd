@@ -159,7 +159,7 @@ The figure below depicts the workflow for the adavanced mehods in the *LINC* pac
     grid.arrange(overview_plot)
 ```
 
-As seen in the previous sections the function *linc()* produces a *LINCmatrix* instance, the function *clusterlinc()* a *LINCcluster* instance and so on. Two functions, termed *feature()* and *getlinc()*, provide quick access to the important data structures stored in these objects. Converting a *LINCcluster* into a *LINCmatrix* for instance could be useful in case one wants to plot the distribution of correlation values instead of the cluster applying *plotlinc()*. The function call *getlinc(..., subject = "queries")* will return the possible queries in the object. Calling *plotlinc(..., showCor =)* will output scatterplots of correlations between a query and up to five subjects. 
+As seen in the previous sections the function *linc()* produces a *LINCmatrix* instance, the function *clusterlinc()* a *LINCcluster* instance and so on. Two functions, termed *feature()* and *getlinc()*, provide quick access to the important data structures stored in these objects. Converting a *LINCcluster* into a *LINCmatrix* for instance could be useful in case one wants to plot the distribution of correlation values instead of the cluster applying *plotlinc()*. The function call *getlinc(..., subject = "queries")* will return the possible queries in the object. Calling *plotlinc(..., showCor =)* will output scatterplots of correlations between a query and up to five subjects. *getcoexpr()* returns a vector of co-expressed genes.
 
 ```{r fig.width = 11, fig.height = 7, warning = FALSE, eval = TRUE}
 data(BRAIN_EXPR)
@@ -171,7 +171,8 @@ crbl_matrix <- crbl_cluster + feature(setLevel = "LINCmatrix", showLevels = TRUE
 # getlinc() is used to accesss information
 getlinc(crbl_cluster, subject = "geneSystem")
 getlinc(crbl_cluster, subject = "queries")
-getlinc(crbl_cluster, subject = "customID")
+# Get the co-expressed genes for the gene with the entrez id "441951" (ZFAS1)
+zfas1 <- getcoexpr(crbl_cluster, query = "441951" ); str(zfas1)
 str(crbl_matrix@assignment) # protein-coding genes are stored in the 'assignment' slot
 
 plotlinc(crbl_cluster, showCor = c("647979", "6726", "3337", "3304" ,"3320"))
