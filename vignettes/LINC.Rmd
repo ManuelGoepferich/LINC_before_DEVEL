@@ -67,6 +67,7 @@ The main function of this package termed *linc()* computes a correlation matrix 
 **It is useful to subset the input expression matrix such that only lincRNAs of interest as well as variance- and/or expression-selected protein-coding genes are considered!**
 
 ```{r fig.width = 17, fig.height = 10, warning = FALSE, eval = TRUE}
+suppressWarnings(suppressMessages(require(LINC)))
 data(BRAIN_EXPR)
 
 # (A) call 'linc' with no further arguments
