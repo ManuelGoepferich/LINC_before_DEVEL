@@ -1,7 +1,7 @@
 ---
 title: "*LINC* - Co-Expression Analysis of lincRNAs"
 author: "Manuel Göpferich and Carl Herrmann"
-date: "July 2016"
+date: "August 2016"
 output: pdf_document
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
@@ -34,9 +34,10 @@ The basic section will introduce the function *justlinc()* which will immediatel
  
 ## 1.0 Basic: Computation in one step!
 
-The function *justlinc* is a wrapper. It requires a gene expression matrix with columns corresponding to samples and rows to genes. A preprocessing of the matrix is not mandatory. Gene ids need to be given preferably as Ensembl gene ids. **Importanly, this function uses predefined thresholds, so it will not give a result in every case! On the other hand it does not need additional information.**   
+The function *justlinc* is a wrapper. It requires a gene expression matrix with columns corresponding to samples and rows to genes. A preprocessing of the matrix is not mandatory. Gene ids need to be given preferably as Ensembl gene ids. **Importanly, this function uses predefined thresholds, so it will not give a result in every case! On the other hand it does not need additional information.**  
+The following commands show how *justlinc* is called. (Please note, that the large gene expression matrix named *GTEX_LIVER_CRUDE* is not provided in this Version of the package.) 
 
-```{r fig.width = 14, fig.height = 12, warning = FALSE, message = FALSE, eval = TRUE}
+```{r fig.width = 14, fig.height = 12, warning = FALSE, message = FALSE, eval = FALSE}
 suppressWarnings(suppressMessages(require(LINC)))
 data(LIVER_EXPR)
 
@@ -47,11 +48,9 @@ str(GTEX_LIVER_CRUDE)
 justlinc(GTEX_LIVER_CRUDE)
 ```
 
-The first plot shows 10 lincRNAs selected according to their median expression, variance and correlation to protein-coding genes. The output for the second plot depicts the pathways associated with the co-expressed protein-coding genes (not shown). 
-
 The optional argument *targetGenes* can be either a gene *'biotype'* (the default value is *'lincRNA'*), a single candidate gene or a vector of genes.
 
-```{r fig.width = 9.5, fig.height = 11.5, fig.keep='first', warning = FALSE, eval = TRUE}
+```{r fig.width = 9.5, fig.height = 11.5, fig.keep='first', warning = FALSE, eval = FALSE}
 # 'justlinc' called with queries
 my_lincRNAs <- c("ENSG00000224153", "ENSG00000197813",
                  "ENSG00000179136", "ENSG00000259439",
