@@ -53,20 +53,23 @@ Manuel Goepferich
 \code{linc} 
 }
 \examples{
-data(LIVER_EXPR)
+# NOT RUN:
 
+# large gene expression matrix not avaiable in this version
+
+# data(LIVER_EXPR)
 # a gene expression matrix with > 50,000 genes
-str(GTEX_LIVER_CRUDE)
+# str(GTEX_LIVER_CRUDE)
 
 # 'justlinc' will search for the 10 best candidates
-justlinc(GTEX_LIVER_CRUDE)
+try(justlinc(GTEX_LIVER_CRUDE), silent = TRUE)
 
 # 'justlinc' called with queries
 my_lincRNAs <- c("ENSG00000224153", "ENSG00000197813",
                  "ENSG00000179136", "ENSG00000259439",
                  "ENSG00000267462")
 
-res <- justlinc(GTEX_LIVER_CRUDE, targetGenes = my_lincRNAs)
+try(justlinc(GTEX_LIVER_CRUDE, targetGenes = my_lincRNAs), silent = TRUE)
 }  
 \keyword{ ~justlinc }
 \keyword{methods}
