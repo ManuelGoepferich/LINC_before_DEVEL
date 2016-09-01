@@ -8,8 +8,7 @@ LINCmatrix <- setClass("LINCmatrix",
                          correlation = "list",
                          expression  = "matrix",
                          history     = "environment",
-                         linCenvir   = "environment"),
-                         sealed      = TRUE
+                         linCenvir   = "environment")
 )
 
 LINCcluster <- setClass("LINCcluster",
@@ -20,8 +19,7 @@ LINCcluster <- setClass("LINCcluster",
                           expression  = "matrix",
                           history     = "environment",
                           linCenvir   = "environment"),
-                          contains    = "LINCmatrix",
-                          sealed      = TRUE  
+                          contains    = "LINCmatrix"
 )
 
 ## CLASS DEFINITION
@@ -33,8 +31,7 @@ LINCsingle <- setClass("LINCsingle",
                          expression  = "matrix",
                          history     = "environment",
                          linCenvir   = "environment"),
-                         contains    = "LINCmatrix",
-                         sealed      = TRUE
+                         contains    = "LINCmatrix"
 )
 
 ## CLASS DEFINITION
@@ -46,8 +43,7 @@ LINCbio <- setClass("LINCbio",
                       expression  = "matrix",
                       history     = "environment",
                       linCenvir   = "environment"),
-                      contains = "LINCmatrix",
-                      sealed      = TRUE  
+                      contains = "LINCmatrix"
 )
 
 ## CLASS DEFINITION
@@ -56,7 +52,6 @@ LINCfeature <- setClass("LINCfeature",
                           customID     = "character",
                           customCol    = "character",
                           setLevel     = "character",
-                          showLevels   = "logical"),
-                          sealed       = TRUE
+                          showLevels   = "logical")
 )
 
