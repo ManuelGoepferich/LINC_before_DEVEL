@@ -1355,7 +1355,7 @@ setMethod(f   = "plotlinc",
                                    low = "white", high = "violetred4",
                                    colnames_position = "top")
 
-            hs_promise <- history(linCencir(input)$cluster)
+            hs_promise <- history(linCenvir(input)$cluster)
 
             # get and plot the statistical parameters
             get_this <- c("distMethod", "clustMethod", 
