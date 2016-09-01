@@ -857,7 +857,7 @@ setMethod(f     = "clusterlinc",
               if(class(ct_promise) == "try-error") stop(errorm04)
               if(length(ct_promise) != 1) stop(errorm04)
               if(!is.element(ct_promise, seq_len(nrow(
-                linCenvir(linc)$correlation(linc)[[1]])))) stop(errorm04)
+              correlation(linCenvir(linc)$linc)[[1]])))) stop(errorm04)
               out_history$pvalCutOff <- NULL
             }
             
