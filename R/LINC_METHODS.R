@@ -1151,7 +1151,7 @@ setMethod(f     = "getbio",
             results(out_linc)     <- list(bio = out_bio_terms)  
             assignment(out_linc)  <- assignment(cluster)
             correlation(out_linc) <- correlation(cluster)
-            expression(out_linc)  <- express(cluster)
+            express(out_linc)  <- express(cluster)
             history(out_linc)     <- out_history
             out_linCenvir        <- NULL
             out_linCenvir        <- linCenvir(cluster)
