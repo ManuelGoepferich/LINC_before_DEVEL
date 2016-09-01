@@ -1,12 +1,15 @@
 
+importFrom(grDevices, colors)
+importFrom(utils, str, tail, write.table)
+importFrom(reshape2, melt)
+
 importFrom(Biobase, rowMedians)
 importFrom(mygene, getGenes)
 import(clusterProfiler)
 import(ReactomePA)
 import(stats)
-import(GOSemSim)
 importFrom(DOSE, enrichDO)
-importFrom(reshape, melt)
+
 importFrom(gridExtra, grid.arrange)
 importFrom(grid, rasterGrob)
 importFrom(grid, textGrob)
@@ -21,7 +24,8 @@ importFrom(png, readPNG)
 importFrom(sva, svaseq)
 import(org.Hs.eg.db)
 import(ggplot2)
-import(ReactomePA)
+importFrom(ReactomePA, enrichPathway)
+
 export(linc)
 export(justlinc)
 export(clusterlinc)
