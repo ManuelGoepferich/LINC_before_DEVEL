@@ -1,15 +1,15 @@
 Package: LINC
 Type: Package
 Title: annotation of noncoding RNAs and coexpressed genes
-Version: 1.00.7
+Version: 1.00.8
 Date: 2016-09-01
 Author: Manuel Goepferich
 Maintainer: Manuel Goepferich <manuel.goepferich@gmx.de>
-Depends: R (>= 3.3.1), methods, stats, org.Hs.eg.db, ggplot2, clusterProfiler, 
+Depends: R (>= 3.3.1), methods, stats, org.Hs.eg.db, ggplot2, clusterProfiler, ReactomePA,
 Description: This package enables the annotation of ncRNAs based on expression datasets. The underlying principle is called 'guilty by association' meaning a non-coding RNA is assumed to the have the a similar biological function as the group of its associated (co-expressed) protein-coding genes. In the first step a correlation matrix is computed storing the correlation of coding and non-coding genes. Secondly, query genes and their associated genes with high correlations can be extracted. The third step calls a gene ontology to retrieve the biological function of associated genes.  
 biocViews: Software, BiologicalQuestion, GeneRegulation
 License: Artistic-2.0
 LinkingTo: Rcpp
-Imports: Rcpp  (>= 0.11.0), DOSE, ggtree, gridExtra, ape, grid, png,  mygene, Biobase, sva, GOSemSim, ReactomePA, reshape2
+Imports: Rcpp  (>= 0.11.0), DOSE, ggtree, gridExtra, ape, grid, png,  mygene, Biobase, sva, GOSemSim, reshape2
 VignetteBuilder: knitr
 Suggests: RUnit, BiocGenerics,  knitr, biomaRt
