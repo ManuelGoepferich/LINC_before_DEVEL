@@ -2300,9 +2300,8 @@ setMethod(f   = "overlaylinc",
             e1e2_intersect <- (input1 + input2)          
             to_overlay <- results(e1e2_intersect)     
 
-
-            cluster  <- results(linCenvir(input1$cluster))[[1]] 
-            bio_list <- results(linCenvir(input1$bio))[[1]] 
+            cluster  <- results(linCenvir(input1)$cluster)[[1]] 
+            bio_list <- results(linCenvir(input1)$bio)[[1]] 
             
             ## SECTION0: INPUT CONTROL  
             # check for a cluster
