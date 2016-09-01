@@ -5,7 +5,6 @@
 ## ISSUES:
 ## native routines
 
-
 .onAttach <- function(...) {
   
   packageStartupMessage(paste("This is LINC\nVersion:",
@@ -341,13 +340,13 @@ querycluster <- function(query = NULL,
   # derive the traits
   trait_list <- lapply(linc_class, function(x){
     qn_promise  <- names(
-      results(linCenvir(x)$cluster)$neighbours)
+      results(linCenvir(x)$cluster)[[1]]$neighbours)
     
     tt_promise <- try(index <- is.element(qn_promise, query),
                       silent = TRUE)
     if(class(tt_promise) == "try-error") tt_promise <- NULL
     if(!is.null(tt_promise)){
-      y <- results(linCenvir(x)$cluster)$neighbours[index] 
+      y <- results(linCenvir(x)$cluster)[[1]]$neighbours[index] 
       if(is.list(y) && length(y) > 1) y <- NULL
     } else {
       y <- NULL
