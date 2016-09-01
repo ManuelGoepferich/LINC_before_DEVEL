@@ -1,7 +1,7 @@
 Package: LINC
 Type: Package
 Title: annotation of noncoding RNAs and coexpressed genes
-Version: 1.00.4
+Version: 1.00.5
 Date: 2016-09-01
 Author: Manuel Goepferich
 Maintainer: Manuel Goepferich <manuel.goepferich@gmx.de>
