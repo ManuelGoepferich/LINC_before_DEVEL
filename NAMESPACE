@@ -24,7 +24,7 @@ importFrom(png, readPNG)
 importFrom(sva, svaseq)
 import(org.Hs.eg.db)
 import(ggplot2)
-importFrom(ReactomePA, enrichPathway)
+
 
 export(linc)
 export(justlinc)
