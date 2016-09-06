@@ -8,7 +8,7 @@ import(stats)
 
 importFrom(DOSE, clusterSim, cnetplot, doSim, dotplot, enrichDO, enrichMap, enrichNCG, EXTID2NAME, geneSim, gseaplot, gseDO, gseNCG, gsfilter, mclusterSim, netplot, plot, scaleNodeColor, setReadable, setting.graph.attributes, show, simplot, summary, theme_dose, upsetplot)
 importFrom(ReactomePA, enrichPathway, gsePathway, viewPathway)
-importFrom(clusterProfiler, bitr, bitr_kegg, buildGOmap, compareCluster, dotplot, dropGO, enrichDAVID, enricher, enrichGO, enrichKEGG, enrichMKEGG, Gff2GeneTable, go2ont, go2term, gofilter, groupGO, GSEA, gseGO, gseKEGG, gseMKEGG, idType, merge_result, plot, plotGOgraph, read.gmt, search_kegg_organism, simplify)
+import(clusterProfiler)
 
 importFrom(gridExtra, grid.arrange)
 importFrom(grid, rasterGrob)
