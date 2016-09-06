@@ -10,6 +10,6 @@ Description: This package enables the annotation of ncRNAs based on expression d
 biocViews: Software, BiologicalQuestion, GeneRegulation
 License: Artistic-2.0
 LinkingTo: Rcpp
-Imports: Rcpp  (>= 0.11.0), DOSE, ggtree, gridExtra, ape, grid, png,  mygene, Biobase, sva, reshape2, utilis, grDevices, clusterProfiler, ReactomePA
+Imports: Rcpp  (>= 0.11.0), DOSE, ggtree, gridExtra, ape, grid, png,  mygene, Biobase, sva, reshape2, utils, grDevices, clusterProfiler, ReactomePA
 VignetteBuilder: knitr
 Suggests: RUnit, BiocGenerics,  knitr, biomaRt
