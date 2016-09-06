@@ -7,7 +7,7 @@ importFrom(mygene, getGenes)
 import(stats)
 
 importFrom(DOSE, clusterSim, cnetplot, doSim, dotplot, enrichDO, enrichMap, enrichNCG, EXTID2NAME, geneSim, gseaplot, gseDO, gseNCG, gsfilter, mclusterSim, netplot, plot, scaleNodeColor, setReadable, setting.graph.attributes, show, simplot, summary, theme_dose, upsetplot)
-importFrom(ReactomePA, enrichPathway, gsePathway, viewPathway)
+import(ReactomePA)
 import(clusterProfiler)
 
 importFrom(gridExtra, grid.arrange)
