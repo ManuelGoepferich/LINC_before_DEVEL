@@ -7,8 +7,8 @@
 
 .onAttach <- function(...) {
   
-  packageStartupMessage(paste("This is LINC\nVersion:",
-                              "0.99.7 (Co-Expression Analysis of lincRNAs)"))
+  packageStartupMessage(paste("This is LINC\n",
+                              "(Co-Expression Analysis of lincRNAs)"))
   
 }
 
