@@ -7,8 +7,8 @@ importFrom(mygene, getGenes)
 import(stats)
 
 importFrom(DOSE, clusterSim, cnetplot, doSim, dotplot, enrichDO, enrichMap, enrichNCG, EXTID2NAME, geneSim, gseaplot, gseDO, gseNCG, gsfilter, mclusterSim, netplot, plot, scaleNodeColor, setReadable, setting.graph.attributes, show, simplot, summary, theme_dose, upsetplot)
-import(ReactomePA)
-import(clusterProfiler)
+importFrom(ReactomePA, enrichPathway)
+importFrom(clusterProfiler, enrichGO)
 
 importFrom(gridExtra, grid.arrange)
 importFrom(grid, rasterGrob)
@@ -23,8 +23,8 @@ importFrom(ggtree, geom_tiplab)
 importFrom(png, readPNG)
 importFrom(sva, svaseq)
 
-import(org.Hs.eg.db)
-import(ggplot2)
+importFrom(org.Hs.eg.db, org.Hs.eg.db)
+importFrom(ggplot2, geom_point, geom_hist, geom_line, element_text)
 
 
 export(linc)
@@ -39,6 +39,10 @@ export(feature)
 export(linctable)
 export(getcoexpr)
 export(overlaylinc)
+
+export(enrichGO)
+export(enrichPathway)
+
 exportClass("LINCmatrix")
 exportClass("LINCcluster")
 exportClass("LINCbio")
