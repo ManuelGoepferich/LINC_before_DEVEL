@@ -8,7 +8,7 @@ import(stats)
 
 importFrom(DOSE, clusterSim, cnetplot, doSim, dotplot, enrichDO, enrichMap, enrichNCG, EXTID2NAME, geneSim, gseaplot, gseDO, gseNCG, gsfilter, mclusterSim, netplot, plot, scaleNodeColor, setReadable, setting.graph.attributes, show, simplot, summary, theme_dose, upsetplot)
 importFrom(ReactomePA, enrichPathway)
-importFrom(clusterProfiler, enrichGO)
+importFrom(clusterProfiler, enrichGO, compareCluster)
 
 importFrom(gridExtra, grid.arrange)
 importFrom(grid, rasterGrob)
@@ -40,8 +40,7 @@ export(linctable)
 export(getcoexpr)
 export(overlaylinc)
 
-export(enrichGO)
-export(enrichPathway)
+
 
 exportClass("LINCmatrix")
 exportClass("LINCcluster")
