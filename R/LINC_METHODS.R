@@ -239,7 +239,7 @@ setMethod(f = "justlinc",
                 s_df <- data.frame(lincRNA = query, protein_coding
                                    = subject, SAMPLES = seq_len(ncol(pc_matrix)))
                 s_cor <- cor(subject, query, method = "spearman")
-                splot <- ggplot(s_df) + geom_point(aes(x =
+                splot <- ggplot(s_df, environment = environment()) + geom_point(aes(x =
                                                          protein_coding, y = lincRNA), colour = "firebrick4",
                                                    size = 2) + ggtitle(paste(names(pc_list)[pp], "vs", 
                                                                              pc_list[[pp]][1],"| CORRELATION:", round(s_cor, 2))) +
@@ -1194,7 +1194,7 @@ setMethod(f   = "plotlinc",
             df_boxplot  <- suppressMessages(reshape2::melt(em_promise))
             names(df_boxplot) <- c(NA, "SAMPLES", "VALUE")
             gg_box <- ggplot(df_boxplot,
-                             aes(SAMPLES, VALUE)) + geom_boxplot(outlier.color =
+                             aes(SAMPLES, VALUE), environment = environment()) + geom_boxplot(outlier.color =
                                                                    "firebrick", colour = "dodgerblue3") +  theme(
                                                                      panel.border = element_rect(color = "grey", fill = NA),   
                                                                      panel.background = element_blank()) +
@@ -1203,7 +1203,7 @@ setMethod(f   = "plotlinc",
                                               color = "steelblue4"))
             
             # create a frequency plot
-            gg_freq <- ggplot(df_boxplot, aes(VALUE)) +
+            gg_freq <- ggplot(df_boxplot, aes(VALUE), environment = environment()) +
               geom_histogram(bins = 30, fill = "gray95" ) +
               geom_freqpoly(colour = "firebrick", linetype = "dashed", size = 0.7) +
               theme(
@@ -1216,7 +1216,7 @@ setMethod(f   = "plotlinc",
             
             # create a histogram of correlation values
             df_cor <- data.frame(CORRELATION = as.vector(ac_promise))
-            gg_cor <- ggplot(df_cor, aes(CORRELATION)) + geom_histogram(binwidth = 0.02,  #bins = 100,
+            gg_cor <- ggplot(df_cor, aes(CORRELATION), environment = environment()) + geom_histogram(binwidth = 0.02,  #bins = 100,
                                                                         size = 1, fill = c(rep("grey", 95), rep("dodgerblue3", 6))) +  theme(
                                                                           panel.border = element_rect(color = "grey", fill = NA),   
                                                                           panel.background = element_blank()) +
@@ -1232,7 +1232,7 @@ setMethod(f   = "plotlinc",
                                  scale. = FALSE)  
             df_pca <- data.frame(PC = seq_len(length(pca_object$sdev)),
                                  VARIANCE = (pca_object$sdev/sum(pca_object$sdev) * 100))
-            gg_pca <- ggplot(df_pca, aes(PC, VARIANCE)) + geom_point(
+            gg_pca <- ggplot(df_pca, aes(PC, VARIANCE), environment = environment()) + geom_point(
               size = 4, colour = "dodgerblue3") +  theme(
                 panel.border = element_rect(color = "grey", fill = NA),   
                 panel.background = element_blank()) +
@@ -1260,7 +1260,7 @@ setMethod(f   = "plotlinc",
                                   y = -c(1:10), x = rep(0,10), group =
                                     c(rep("cor", 4), rep("samples", 4), rep("expr", 2)))
             
-            pty_pl <- (ggplot(df_stat, aes(x,y)) +
+            pty_pl <- (ggplot(df_stat, aes(x,y), environment = environment()) +
                          geom_point(color = "white") + xlim(0, 1) +
                          theme(axis.line = element_line(colour =
                                                           "white"), panel.grid.major = element_blank(),
@@ -1376,7 +1376,7 @@ setMethod(f   = "plotlinc",
             df_stat <- data.frame(value = c(" ", par_described, " "),
                                   y = -c(1:10), x = rep(0,10))
             
-            pty_pl <- (ggplot(df_stat, aes(x,y)) +
+            pty_pl <- (ggplot(df_stat, aes(x,y), environment = environment()) +
                          geom_point(color = "white") + xlim(0, 1) +
                          theme(axis.line = element_line(colour =
                                                           "white"), panel.grid.major = element_blank(),
@@ -1460,7 +1460,7 @@ setMethod(f   = "plotlinc",
             
             # plot the annotation
             annotation_plot <- ggplot(annotation_df, aes(TERMS,
-                                                         y = pvalue, fill = ASSIGNMENT)) + geom_bar( stat =
+                                                         y = pvalue, fill = ASSIGNMENT), environment = environment()) + geom_bar( stat =
                                                                                                        "identity", width = 0.8) +
               theme( panel.grid.major = element_blank(),
                      panel.grid.minor = element_blank(),
@@ -1482,7 +1482,7 @@ setMethod(f   = "plotlinc",
             ############################################################    
             # create a histogram of correlation values
             df_cor <- data.frame(CORRELATION = unlist(corl))
-            gg_cor <- ggplot(df_cor, aes(CORRELATION)) +
+            gg_cor <- ggplot(df_cor, aes(CORRELATION), environment = environment()) +
               geom_histogram(binwidth = 0.02, size = 1, fill = "grey") +
               theme(panel.border = element_rect(color = "grey",#
                                                 fill = NA), panel.background = element_blank()) +
@@ -1494,7 +1494,7 @@ setMethod(f   = "plotlinc",
                                               color = "ivory4"))
             
             df_pval <- data.frame(pvalue = pval10)
-            gg_pval <- ggplot(df_pval, aes(pvalue)) +
+            gg_pval <- ggplot(df_pval, aes(pvalue), environment = environment()) +
               geom_histogram(binwidth = 1, size = 1, fill = "grey") +
               theme(panel.border = element_rect(color = "grey",
                                                 fill = NA), panel.background = element_blank()) +
@@ -1623,7 +1623,7 @@ setMethod(f   = "plotlinc",
               df_assign <- data.frame(bio_assignment, y = -term_assign,
                                       x = rep(0, length(term_unique)))
               
-              pty_pl <- (ggplot(df_assign, aes(x,y)) +
+              pty_pl <- (ggplot(df_assign, aes(x,y), environment = environment()) +
                            geom_point(color = "white") + xlim(0, 1) +
                            theme(axis.line = element_line(colour =
                                                             "white"), panel.grid.major = element_blank(),
@@ -1943,8 +1943,6 @@ setMethod(f = "singlelinc",
             
             # get information from 'linc' 
             validObject(input)  
-            
-            
             
             cm_promise  <- correlation(linCenvir(input)$linc)[[1]]
             out_history <- history(linCenvir(input)$linc)
@@ -2361,7 +2359,7 @@ setMethod(f   = "overlaylinc",
             df_assign <- data.frame(bio_assignment, y = -term_assign,
                                     x = rep(0, length(term_unique)))
             
-            pty_pl <- (ggplot(df_assign, aes(x,y)) +
+            pty_pl <- (ggplot(df_assign, aes(x,y), environment = environment()) +
                          geom_point(color = "white") + xlim(0, 1) +
                          theme(axis.line = element_line(colour =
                                                           "white"), panel.grid.major = element_blank(),
