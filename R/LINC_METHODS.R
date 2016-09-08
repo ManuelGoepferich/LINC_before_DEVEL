@@ -1714,9 +1714,9 @@ setMethod(f   = "plotlinc",
                                   SUBJECT_2,  SUBJECT_3, SUBJECT_4, SUBJECT_5,
                                   NO_SUBJECT = rep(0, ncol(express(input))))
             
-            qy_gg <- ggplot(expr_df) 
+            qy_gg <- ggplot(expr_df, environment = environment()) 
             
-            qy_gg_ns <- ggplot(expr_df) + geom_bar(aes(x = SAMPLES, 
+            qy_gg_ns <- ggplot(expr_df, environment = environment()) + geom_bar(aes(x = SAMPLES, 
                                                        y = EXPRESSION), stat = "identity", colour =
                                                      "firebrick", fill = "red", alpha = 0.1 ) +
               theme(panel.background = element_blank(),
