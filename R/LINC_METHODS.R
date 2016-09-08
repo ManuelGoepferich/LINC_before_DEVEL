@@ -65,12 +65,13 @@ setMethod(f = "justlinc",
             #data(ENTREZ_BIO, package = "LINC")          
             #data(ENSG_PC, package = "LINC")
             
-            ENSG_BIO_DIR <- system.file("extdata", "ENSG_BIO.RData", package = "LINC")
-            load(ENSG_BIO_DIR)
-            ENTREZ_BIO_DIR <- system.file("extdata", "ENTREZ_BIO.RData", package = "LINC")
-            load(ENTREZ_BIO_DIR)
-            ENSG_PC_DIR <- system.file("extdata", "ENSG_PC.RData", package = "LINC") 
-            load(ENSG_PC_DIR)
+            if(!exists("ENSG_BIO")) stop("Gene Annotation for 'justlinc' not found")
+            #ENSG_BIO_DIR <- system.file("extdata", "ENSG_BIO.RData", package = "LINC")
+            #load(ENSG_BIO_DIR)
+            #ENTREZ_BIO_DIR <- system.file("extdata", "ENTREZ_BIO.RData", package = "LINC")
+            #load(ENTREZ_BIO_DIR)
+            #ENSG_PC_DIR <- system.file("extdata", "ENSG_PC.RData", package = "LINC") 
+            #load(ENSG_PC_DIR)
             
             
             errorm00 <- "'justlinc' failed, please use 'linc'"
