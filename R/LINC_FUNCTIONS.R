@@ -9,8 +9,11 @@
   
   packageStartupMessage(paste("This is LINC\n",
                               "(Co-Expression Analysis of lincRNAs)"))
-    assign("enrichGO", value = signGO(), envir = globalenv())
+  assign("enrichGO", value = signGO(), envir = globalenv())
 }
+
+# special import of enrichGO
+signGO <- function(){ return(enrichGO) }
 
 # set a global binding for variables in ggplot functions
 ASSIGNMENT <- NA; CORRELATION <- NA; EXPRESSION <- NA;
