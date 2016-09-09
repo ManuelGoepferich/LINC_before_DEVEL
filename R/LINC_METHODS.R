@@ -1127,8 +1127,9 @@ setMethod(f     = "getbio",
             
             ## SECTION2: CALL TO GENE ANNOTATION
             if(exists("cP_promise", store)){
-              annotateFun <- match.fun(cP_promise)
-              
+            
+            annotateFun <- get(cP_promise, mode = "function", envir = loadNamespace('LINC'))
+            
               OrgDb <- 'org.Hs.eg.db'
               if(cP_promise == "enrichPathway"){ OrgDb <- "human"}
               
@@ -2022,7 +2023,7 @@ setMethod(f = "singlelinc",
               #suppressPackageStartupMessages(require(clusterProfiler))  
               #suppressPackageStartupMessages(require(org.Hs.eg.db))
               message(inform04)
-              annotateFun <- match.fun(cP_promise)
+              annotateFun  <- get(cP_promise, mode = "function", envir = loadNamespace('LINC'))
             }
             
             ## SECTION1: CO-EXPRESSION AND GENE SELECTION
