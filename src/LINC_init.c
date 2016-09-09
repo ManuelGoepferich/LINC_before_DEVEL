@@ -7,12 +7,10 @@
 
 SEXP LINC_Cppspear(SEXP xinmatrixSEXP, SEXP yinmatrixSEXP);
 SEXP LINC_docdd(SEXP inmatrixSEXP, SEXP outmatrixSEXP, SEXP thSEXP);
-SEXP LINC_doesd(SEXP querySEXP, SEXP wquerySEXP, SEXP rmaxSEXP, SEXP queryposSEXP, SEXP rmaxvecSEXP, SEXP mdiffSEXP, SEXP alphaSEXP);
 
 R_CallMethodDef callMethods[]  = {
   {"C_LINC_Cppspear", (DL_FUNC) &LINC_Cppspear, 2},
   {"C_LINC_docdd", (DL_FUNC) &LINC_docdd, 3},
-  {"C_LINC_doesd", (DL_FUNC) &LINC_doesd, 7},
   {NULL, NULL, 0}
 };
 
