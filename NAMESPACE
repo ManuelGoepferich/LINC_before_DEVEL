@@ -28,7 +28,7 @@ importFrom(sva, svaseq)
 importFrom(org.Hs.eg.db, org.Hs.eg.db)
 importFrom(ggplot2, ggplot, geom_point, geom_histogram, geom_bar, geom_line, element_text, ggtitle, theme, aes, geom_boxplot, element_rect, element_blank, geom_freqpoly, ylim, xlim, scale_x_continuous, scale_y_continuous, element_line, geom_text, scale_colour_manual, scale_fill_manual, geom_vline, coord_flip, scale_x_reverse, scale_y_reverse, scale_fill_gradient2, guides)
 
-export(enrichGO)
+
 export(enrichDO)
 export(enrichPathway)
 
