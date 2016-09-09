@@ -12,6 +12,18 @@
   
 }
 
+# set a global binding for variables in ggplot functions
+ASSIGNMENT <- NA; CORRELATION <- NA; EXPRESSION <- NA;
+NO_SUBJECT <- NA; PC <- NA; SAMPLES <- NA
+SUBJECT_1 <- NA; SUBJECT_2 <- NA; SUBJECT_3 <- NA
+SUBJECT_4 <- NA; SUBJECT_5 <- NA; TERMS <- NA
+VALUE <- NA; VARIANCE <- NA; lincRNA <- NA
+protein_coding <- NA; pvalue <- NA; splot_1 <- NA
+splot_10 <- NA; splot_2 <- NA; splot_3 <- NA
+splot_4 <- NA; splot_5 <- NA; splot_6 <- NA
+splot_7 <- NA; splot_8 <- NA; splot_9 <- NA
+values <- NA; x <- NA; y <- NA
+
 # HELPING FUNCTION "inlogical"
 inlogical <- function(lg_promise, direct){
   if(class(lg_promise) != "logical" ){
