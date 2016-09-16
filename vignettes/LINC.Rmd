@@ -143,7 +143,7 @@ plotlinc(brain_cc)
 
 For a single query gene they function *singlelinc()* comes with many options in terms of co-expression selection. One can select for absolute values, negative correlations and a maximum for co-expressed genes. Here, the query is 'MEG3 - maternally expressed 3' (its Entrez gene id is '55384'). In contrast to *clusterlinc()*, *singlelinc()* will directly call a gene annotation resource for the co-expressed genes.
 
-```{r fig.width = 21, fig.height = 10, warning = FALSE, eval = TRUE}
+```{r fig.width = 21, fig.height = 10, warning = FALSE, eval = FALSE}
 meg3 <- singlelinc(crbl_matrix, query = "55384", threshold = 0.00005, ont = 'BP', verbose = FALSE)
 plotlinc(meg3)
 ```
